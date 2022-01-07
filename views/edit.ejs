@@ -1,45 +1,45 @@
 <%- include('./partials/_head.ejs') %> 
 <%- include('./partials/_navbar.ejs') %> 
 
-<h1>Aquí va el formulario para editar un item</h1>
+<h1>Editar el item <%= id %> </h1>
 
-<form action="/edit?_method=PUT" method="post">
-    <fieldset>
-        <legend>Agrega un lugar</legend>
+<form action="/edit/<%= id %>?_method=PUT" method="post">
+    <fieldset class="card border-primary mb-3" style="max-width: 80%; margin: auto; padding: 20px">
+        <legend>Edita <%= elLugarSeleccionado.name %> </legend>
         <div class="form-group">
             <label for="title" class="form-label mt-4">Nombre del lugar</label>
-            <input type="text"class="form-control" id="title" rows="3"></textarea>
+            <input type="text"class="form-control" id="title" rows="3" name="name" value="<%= elLugarSeleccionado.name %>">
           </div>
         <div class="form-group">
           <label for="description" class="form-label mt-4">Descripcion del lugar</label>
-          <textarea class="form-control" id="description" rows="3"></textarea>
+          <textarea class="form-control" id="description" name="description" rows="3" value="<%= elLugarSeleccionado.description %>"></textarea>
         </div>
         <div class="form-group">
           <label for="formFile" class="form-label mt-4">Imagen del lugar</label>
-          <input class="form-control" type="file" id="formFile">
+          <input class="form-control" name="img" type="file" id="formFile">
         </div>
         <fieldset class="form-group">
           <legend class="mt-4">Estado</legend>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+              <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="visitado" checked="">
               Visitado
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" class="form-check-input" name="status" id="optionsRadios2" value="por visitar">
               Por visitar
             </label>
           </div>
-          <div class="form-check disabled">
+          <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
-              Option three is disabled
+              <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="otra cosa">
+              Otra cosa
             </label>
           </div>
         </fieldset>
-        <fieldset class="form-group">
+        <!-- <fieldset class="form-group">
           <legend class="mt-4">Tipo de lugar</legend>
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -68,7 +68,7 @@
             <input type="range" class="form-range" id="disabledRange" disabled="">
             <label for="customRange3" class="form-label">Amabilidad</label>
             <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
-        </fieldset>
+        </fieldset> -->
         <button type="submit" class="btn btn-primary">Submit</button>
       </fieldset>
 </form>

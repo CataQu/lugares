@@ -1,0 +1,82 @@
+[
+ {
+  "id": 1,
+  "name": "Puerto Escondido",
+  "description": "dfydcghcgvygh",
+  "img": "/img/PuertoEscondido.jpeg",
+  "imgEpigrafe": "Playa Carrizalillo",
+  "status": "visitado",
+  "type": "Playa"
+ },
+ {
+  "id": 3,
+  "name": "San Cristobal de las Casas",
+  "description": "La mejor comida",
+  "img": "",
+  "img-epigrafe": " ",
+  "status": "visitado",
+  "type": "Playa"
+ },
+ {
+  "id": 4,
+  "name": "Playa del Carmen",
+  "description": "Gringolandia",
+  "img": "",
+  "img-epigrafe": " ",
+  "status": "visitado",
+  "type": "Playa"
+ },
+ {
+  "id": 5,
+  "name": "Cancun",
+  "description": "Un lugar para ir al aeropuerto nomas",
+  "img": "",
+  "img-epigrafe": " ",
+  "status": "otra cosa",
+  "type": " "
+ },
+ {
+  "id": 6,
+  "name": "Merida",
+  "description": "vgvguv",
+  "img": " ",
+  "img-epigrafe": " ",
+  "status": "visitado",
+  "type": "Playa"
+ },
+ {
+  "id": 7,
+  "name": "Progreso",
+  "description": "lorem ipsum dolor sit amet, consectetur adipiscing",
+  "img": " ",
+  "img-epigrafe": " ",
+  "status": "Visitado",
+  "type": "Playa"
+ },
+ {
+  "id": 8,
+  "name": "CDMX",
+  "description": "Me falta un monton del museo por recorrer",
+  "img": "",
+  "img-epigrafe": " ",
+  "status": "por visitar",
+  "type": " "
+ },
+ {
+  "id": 9,
+  "name": "Tuxtla Gutierrez",
+  "description": "lorem ipsum dolor sit amet, consectetur adipiscing",
+  "img": " ",
+  "img-epigrafe": " ",
+  "status": "Visitado",
+  "type": "Playa"
+ },
+ {
+  "id": 10,
+  "name": "Boston",
+  "description": "Tal vez vivamos ahi",
+  "status": "por visitar",
+  "type": "ciudad",
+  "img": ""
+ }
+]

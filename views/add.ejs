@@ -1,59 +1,63 @@
 <%- include('./partials/_head.ejs') %> 
 <%- include('./partials/_navbar.ejs') %> 
 <h1>Aquí va el formulario para agregar un item</h1>
-
+<!--  Para generar un id nuevo podria buscar el id del ultimo item de json y sumarle uno.
+  let ultimoID = lugares[lugares.length - 1].id
+  let newID = ultimoID + 1 -->
 <form action="/add" method="post">
-    <fieldset>
-        <legend>Agrega un lugar</legend>
+    <fieldset class="card border-primary mb-3" style="max-width: 80%; margin: auto; padding: 20px">
+      <% let ultimoID = lugares[lugares.length - 1].id
+          let newID = ultimoID + 1 %> 
+        <legend>Agrega el lugar <%=newID%> </legend>
         <div class="form-group">
             <label for="title" class="form-label mt-4">Nombre del lugar</label>
-            <input type="text"class="form-control" id="title" rows="3"></textarea>
+            <input type="text"class="form-control" id="title" name="name" rows="3"></textarea>
           </div>
         <div class="form-group">
           <label for="description" class="form-label mt-4">Descripcion del lugar</label>
-          <textarea class="form-control" id="description" rows="3"></textarea>
+          <textarea class="form-control" id="description" name="description" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="formFile" class="form-label mt-4">Imagen del lugar</label>
-          <input class="form-control" type="file" id="formFile">
+          <input class="form-control" type="file" id="formFile" name="img">
         </div>
         <fieldset class="form-group">
           <legend class="mt-4">Estado</legend>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+              <input type="radio" class="form-check-input" name="status" id="optionsRadios1" value="visitado" checked="">
               Visitado
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" class="form-check-input" name="status" id="optionsRadios2" value="por visitar">
               Por visitar
             </label>
           </div>
-          <div class="form-check disabled">
+          <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled="">
-              Option three is disabled
+              <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="otra cosa" >
+              Otra cosa
             </label>
           </div>
         </fieldset>
         <fieldset class="form-group">
           <legend class="mt-4">Tipo de lugar</legend>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" name="type" type="checkbox" value="playa" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Playa
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+            <input class="form-check-input" name="type" type="checkbox" value="ciudad" id="flexCheckChecked" checked="">
             <label class="form-check-label" for="flexCheckChecked">
               Ciudad
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+            <input class="form-check-input" name="type" type="checkbox" value="montaña" id="flexCheckChecked" checked="">
             <label class="form-check-label" for="flexCheckChecked">
               Montaña
             </label>
