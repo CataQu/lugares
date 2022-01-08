@@ -7,18 +7,18 @@
 
 <% if (id != null || id != undefined ) { %>
   <div class="card mb-3" style="margin: 20px">
-    <h3 class="card-header"><%= elLugarSeleccionado.name %></h3>
+    <h3 class="card-header"><%= lugar.name %></h3>
     <div class="card-body">
-      <h5 class="card-title"><%= elLugarSeleccionado.description %></h5>
-      <!-- <h6 class="card-subtitle text-muted">ID: <%= elLugarSeleccionado.id %></h6> -->
+      <h5 class="card-title"><%= lugar.description %></h5>
+      <!-- <h6 class="card-subtitle text-muted">ID: <%= lugar.id %></h6> -->
     </div>
-     <img src=<%= elLugarSeleccionado.img %> class="d-block user-select-none" width="100%" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
+     <img src="/img/<%= lugar.img %>" class="d-block user-select-none" width="100%" focusable="false" role="img" preserveAspectRatio="xMidYMid slice" viewBox="0 0 318 180" style="font-size:1.125rem;text-anchor:middle">
     <div class="card-body">
-      <p class="card-text"><%= elLugarSeleccionado.imgEpigrafe %> </p>
+      <p class="card-text"><%= lugar.imgEpigrafe %> </p>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">Estado: <%= elLugarSeleccionado.status %></li>
-      <li class="list-group-item">Tipo de lugar: <%= elLugarSeleccionado.type %></li>
+      <li class="list-group-item">Estado: <%= lugar.status %></li>
+      <li class="list-group-item">Tipo de lugar: <%= lugar.type %></li>
     </ul>
     <div class="card-body">
       <a href="/edit/<%= id %> " class="btn btn-primary">Edit</a>

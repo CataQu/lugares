@@ -4,14 +4,14 @@
 <!--  Para generar un id nuevo podria buscar el id del ultimo item de json y sumarle uno.
   let ultimoID = lugares[lugares.length - 1].id
   let newID = ultimoID + 1 -->
-<form action="/add" method="post">
+<form action="/add" method="post" enctype="multipart/form-data">
     <fieldset class="card border-primary mb-3" style="max-width: 80%; margin: auto; padding: 20px">
       <% let ultimoID = lugares[lugares.length - 1].id
           let newID = ultimoID + 1 %> 
         <legend>Agrega el lugar <%=newID%> </legend>
         <div class="form-group">
             <label for="title" class="form-label mt-4">Nombre del lugar</label>
-            <input type="text"class="form-control" id="title" name="name" rows="3"></textarea>
+            <input type="text"class="form-control" id="title" name="name" rows="3">
           </div>
         <div class="form-group">
           <label for="description" class="form-label mt-4">Descripcion del lugar</label>
@@ -21,6 +21,10 @@
           <label for="formFile" class="form-label mt-4">Imagen del lugar</label>
           <input class="form-control" type="file" id="formFile" name="img">
         </div>
+        <div class="form-group">
+            <label for="title" class="form-label mt-4">Pequeña descripción de la imagen</label>
+            <input type="text"class="form-control" id="title" name="imgEpigrafe" rows="3" maxlength="10">
+          </div>
         <fieldset class="form-group">
           <legend class="mt-4">Estado</legend>
           <div class="form-check">
@@ -37,8 +41,8 @@
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="otra cosa" >
-              Otra cosa
+              <input type="radio" class="form-check-input" name="status" id="optionsRadios3" value="volvería" >
+              Volvería
             </label>
           </div>
         </fieldset>

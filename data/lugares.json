@@ -1,82 +1,26 @@
 [
  {
-  "id": 1,
-  "name": "Puerto Escondido",
-  "description": "dfydcghcgvygh",
-  "img": "/img/PuertoEscondido.jpeg",
-  "imgEpigrafe": "Playa Carrizalillo",
-  "status": "visitado",
-  "type": "Playa"
- },
- {
-  "id": 3,
-  "name": "San Cristobal de las Casas",
-  "description": "La mejor comida",
-  "img": "",
-  "img-epigrafe": " ",
-  "status": "visitado",
-  "type": "Playa"
- },
- {
-  "id": 4,
-  "name": "Playa del Carmen",
-  "description": "Gringolandia",
-  "img": "",
-  "img-epigrafe": " ",
-  "status": "visitado",
-  "type": "Playa"
- },
- {
-  "id": 5,
-  "name": "Cancun",
-  "description": "Un lugar para ir al aeropuerto nomas",
-  "img": "",
-  "img-epigrafe": " ",
-  "status": "otra cosa",
-  "type": " "
- },
- {
-  "id": 6,
-  "name": "Merida",
-  "description": "vgvguv",
-  "img": " ",
-  "img-epigrafe": " ",
-  "status": "visitado",
-  "type": "Playa"
- },
- {
-  "id": 7,
-  "name": "Progreso",
-  "description": "lorem ipsum dolor sit amet, consectetur adipiscing",
-  "img": " ",
-  "img-epigrafe": " ",
-  "status": "Visitado",
-  "type": "Playa"
- },
- {
   "id": 8,
-  "name": "CDMX",
-  "description": "Me falta un monton del museo por recorrer",
-  "img": "",
-  "img-epigrafe": " ",
-  "status": "por visitar",
-  "type": " "
+  "name": "Puerto Escondido",
+  "description": "Playas hermosas, el agua transparente permite ver peces en los corales cerca de la playa, buena comida y gente agradable. No hay wifi sumamente confiable pero en algunos lugares funciona medianamente bien. ",
+  "status": "visitado",
+  "img": "1641673736850.jpeg",
+  "imgEpigrafe": "Carrizalil",
+  "type": [
+   "playa",
+   "ciudad"
+  ]
  },
  {
   "id": 9,
-  "name": "Tuxtla Gutierrez",
-  "description": "lorem ipsum dolor sit amet, consectetur adipiscing",
-  "img": " ",
-  "img-epigrafe": " ",
-  "status": "Visitado",
-  "type": "Playa"
- },
- {
-  "id": 10,
-  "name": "Boston",
-  "description": "Tal vez vivamos ahi",
-  "status": "por visitar",
-  "type": "ciudad",
-  "img": ""
+  "name": "San Cristobal de las Casas",
+  "description": "Fresquito y con muchisimas cosas hermosas por hacer. Las mejores comidas",
+  "status": "visitado",
+  "type": [
+   "ciudad",
+   "montaña"
+  ],
+  "img": "1641674413300.jpeg",
+  "imgEpigrafe": ""
  }
 ]

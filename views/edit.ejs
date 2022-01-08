@@ -3,16 +3,16 @@
 
 <h1>Editar el item <%= id %> </h1>
 
-<form action="/edit/<%= id %>?_method=PUT" method="post">
+<form action="/edit/<%= id %>?_method=PUT" method="post" enctype="multipart/form-data">
     <fieldset class="card border-primary mb-3" style="max-width: 80%; margin: auto; padding: 20px">
-        <legend>Edita <%= elLugarSeleccionado.name %> </legend>
+        <legend>Edita <%= lugar.name %> </legend>
         <div class="form-group">
             <label for="title" class="form-label mt-4">Nombre del lugar</label>
-            <input type="text"class="form-control" id="title" rows="3" name="name" value="<%= elLugarSeleccionado.name %>">
+            <input type="text"class="form-control" id="title" rows="3" name="name" value="<%= lugar.name %>">
           </div>
         <div class="form-group">
           <label for="description" class="form-label mt-4">Descripcion del lugar</label>
-          <textarea class="form-control" id="description" name="description" rows="3" value="<%= elLugarSeleccionado.description %>"></textarea>
+          <textarea class="form-control" id="description" name="description" rows="3"><%= lugar.description %></textarea>
         </div>
         <div class="form-group">
           <label for="formFile" class="form-label mt-4">Imagen del lugar</label>
@@ -39,28 +39,28 @@
             </label>
           </div>
         </fieldset>
-        <!-- <fieldset class="form-group">
+         <fieldset class="form-group">
           <legend class="mt-4">Tipo de lugar</legend>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <input class="form-check-input" type="checkbox" name="type" value="playa" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
               Playa
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+            <input class="form-check-input" type="checkbox" name="type" value="ciudad" id="flexCheckChecked" >
             <label class="form-check-label" for="flexCheckChecked">
               Ciudad
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked="">
+            <input class="form-check-input" type="checkbox" name="type" value="montaña" id="flexCheckChecked" >
             <label class="form-check-label" for="flexCheckChecked">
               Montaña
             </label>
           </div>
         </fieldset>
-        <fieldset class="form-group">
+        <!-- <fieldset class="form-group">
           <legend class="mt-4">Caracteristicas</legend>
             <label for="customRange1" class="form-label">Wifi</label>
             <input type="range" class="form-range" id="customRange1">
@@ -68,7 +68,7 @@
             <input type="range" class="form-range" id="disabledRange" disabled="">
             <label for="customRange3" class="form-label">Amabilidad</label>
             <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
-        </fieldset> -->
+        </fieldset>  -->
         <button type="submit" class="btn btn-primary">Submit</button>
       </fieldset>
 </form>

@@ -3,6 +3,7 @@ const path = require('path');
 // requiero el modulo fs que es el filesSystem para poder hacer uso de archivos dentro del proyecto
 const fs = require('fs');
 const req = require('express/lib/request');
+const routes = require('../routes/routes.js')
 
 // con el path busco una ruta normalizada hacia el json donde guardo mi info
 const itemsFilePath = path.join(__dirname, '../data/lugares.json');
@@ -26,7 +27,7 @@ const controller = {
         const lugar = lugares.find(unLugar => unLugar.id === id);
         // retorno la vista y llamo a la variable generada en -25- con el id de la ruta parametrizada. A este puedo usarlo ahora en la vista 'read'. Tambien le paso la variable id para poder usarla en el if
         return res.render('read', {
-            elLugarSeleccionado: lugar,
+            lugar: lugar,
             id: id
         })
     },
@@ -37,7 +38,7 @@ const controller = {
         const lugar = lugares.find(unLugar => unLugar.id === id);
         // al render le paso la vista, el id para que pueda usarlo dentro de la vista y la variable lugar con el item a editar
         res.render('edit', {
-            elLugarSeleccionado: lugar,
+            lugar: lugar,
             id: id
         })
     },
@@ -47,15 +48,16 @@ const controller = {
         // la logica para modificar el JSON. Hago un map para que recorra todo el array y con un if busco el id del para saber que item estoy modificando. 
         // el if retorna el objeto modificado, el spread operator es para que las propiedades que no modifico sigan iguales. Se usa el parametro con el que mapea para encontrar el item a modificar, luego las propiedades con el req.body
         // despues del if tengo que retornar el parametro mapeado
-        // ======PREGUNTA!!! ===== Por que las propiedades que no modifico en el edit se me borran? como subo una imagen nueva? 
+        // Los archivos de img se suben con req.file, no con req.body. Aqui solo ponemos el filename porque en la vista donde se va a mostrar la imagen completo el path
         const lugarModificado = lugares.map(unLugar => {
             if(unLugar.id === id){
                 return {
                     ...unLugar,
                 name: req.body.name,
                 description: req.body.description,
-                img: req.body.img,
-                status: req.body.status
+                status: req.body.status,
+                type: req.body.type,
+                img: req.file.filename
         }
             } return unLugar;
         })
@@ -65,8 +67,10 @@ const controller = {
         return res.redirect('/') //este redirect me manda al browse pero sin la info nueva
     },
     add: (req, res) => {
+        const id = Number(req.params.id);
         res.render('add', {
-            lugares: lugares
+            lugares: lugares,
+            id: id
         })
     },
     post: (req, res) => {
@@ -85,7 +89,8 @@ const controller = {
             description: req.body.description,
             status: req.body.status,
             type: req.body.type,
-            img: req.body.img
+            img: req.file.filename,
+            imgEpigrafe: req.body.imgEpigrafe,
         })
 
         fs.writeFileSync(itemsFilePath, JSON.stringify(lugares, null, ' '));
@@ -102,7 +107,7 @@ const controller = {
          fs.writeFileSync(itemsFilePath, JSON.stringify(lugaresFiltrado, null, ' '));
 
         console.log('Esto confirma que se eliminó el item')
-        res.send('El elemento fue eliminado')
+        res.redirect('/')
     }
 
 }
